@@ -33,7 +33,7 @@
     Progress tracking and status indicators are a community interpretation, not official statements.
   </div>
   <div class="sub-disclaimer warning-box">
-    Last update: 5th August 2026
+    Last update: 11th August 2026
   </div>
   <hr>
   <h2>KSA ecosystem features</h2>
@@ -92,13 +92,13 @@
         <td>Aerodynamics and atmospheres</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>No info yet.</td>
+        <td>Atmospheric density and pressure drive drag and engine performance. Drag area is taken from the vehicle bounding box per axis and depends on which way the vehicle faces, so flying backwards costs much more drag than nose-first. No lift or heating model yet.</td>
       </tr>
       <tr>
         <td>Kittens!</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Cute! Each save now has a persistent kitten roster with crew assignment in the editor and launch menu, seat-level boarding and EVA, per-kitten mission stats and a memorial list. Kittens walk, run and jump on planet surfaces.</td>
+        <td>Cute! Each save has a persistent kitten roster with crew assignment in the editor and launch menu, seat-level boarding and EVA, per-kitten mission stats and a memorial list. Kittens walk, run, jump and tumble on planet surfaces, and can grab onto ladders and capsule hulls to climb and board. A crew portrait panel shows a live camera for each occupied seat.</td>
       </tr>
       <tr>
         <td>Rocket construction</td>
@@ -126,7 +126,7 @@
         <td>Space center and launch complex</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>Placeholder launch pad structures exist at launch sites, with collision and a vegetation exclusion zone. No buildings or facilities yet.</td>
+        <td>Placeholder launch pad structures exist at five launch sites (Cape Canaveral LC-39A, Vandenberg LC-4, Starbase OLM A, Guiana Space Centre ELA-4 and Mahia LC-1A), with collision and a vegetation exclusion zone. No buildings or facilities yet.</td>
       </tr>
       <tr>
         <td>Tech tree and science collection</td>
@@ -177,7 +177,7 @@
         <td>Orbital elements readouts (apoapsis, periapsis, etc...)</td>
         <td class="ok"></td>
         <td class="maybe"></td>
-        <td>Functional. Crude UI. Some text overlapping. Modders working on this as well.
+        <td>Functional. Apoapsis, periapsis and node markers are drawn directly on the orbit, hover readouts sit in the lower left, and numeric data stays hidden until an orbit is hovered or active. Modders working on this as well.
           <a href="https://forums.ahwoo.com/threads/kitten-engineer-redux-ker.443/" target="_blank">
             (Barney) KittenEngineerRedux
           </a>
@@ -261,7 +261,7 @@
         <td>Lift and drag</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>Simple drag is applied. No lift model.</td>
+        <td>Drag is applied from a per-axis bounding-box drag area that depends on which way the vehicle faces, so a vehicle flying backwards has far more drag than one flying nose-first. No lift model.</td>
       </tr>
       <tr>
         <td>Aerodynamics (FAR like)</td>
@@ -321,7 +321,7 @@
         <td class="maybe"></td>
         <td class="maybe"></td>
         <td>
-          Vehicles track peak g-load against a size-scaled structural limit (50 g at 5 m radius, floor 5 g) and are destroyed above it. On-screen alerts warn at 70% and 85% of the g-force or dynamic-pressure limit. No crew g-effects such as blackout yet.
+          Vehicles track peak g-load against a size-scaled structural limit (50 g at 5 m radius, floor 5 g) and are destroyed above it. On-screen alerts warn at 70% and 85% of the g-force or dynamic-pressure limit. The flight computer throttles an automatic burn down to hold 90% of the limit. No crew g-effects such as blackout yet.
           Some modders working on a mod for this.
           <a href="https://forums.ahwoo.com/threads/g-effects.635/" target="_blank">
             (AMPW) G Effects
@@ -672,7 +672,7 @@
         <td>Rocket statistics (Δv, TWR, etc...)</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Basic statistics and gauges present; the stock staging window now shows live dV, TWR and per-engine fuel bars for the active sequence in flight. The readouts count only engines that can actually produce thrust, and TWR accounts for atmospheric pressure.</td>
+        <td>Basic statistics and gauges present; the stock staging window shows live dV, TWR and per-engine fuel bars for the active sequence in flight. The readouts count only engines that can actually produce thrust, and TWR accounts for atmospheric pressure.</td>
       </tr>
       <tr>
         <td>Procedural parts</td>
@@ -732,13 +732,13 @@
         <td>RCS Maneuvering</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Functional</td>
+        <td>Functional. EVA kittens have their own RCS, with a View or Direct control mode and a dedicated gauge panel.</td>
       </tr>
       <tr>
         <td>Rocket statistics</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Basic statistics present; the stock staging window now shows live dV, TWR and per-engine fuel bars for the active sequence in flight. The readouts count only engines that can actually produce thrust, and TWR accounts for atmospheric pressure.</td>
+        <td>Basic statistics present; the stock staging window shows live dV, TWR and per-engine fuel bars for the active sequence in flight. The readouts count only engines that can actually produce thrust, and TWR accounts for atmospheric pressure.</td>
       </tr>
       <tr>
         <td>Orbital parameters readouts</td>
@@ -824,9 +824,9 @@
       </tr>
       <tr>
         <td>Resource dashboard (Fuel, EC, water, etc...)</td>
-        <td class="maybe"></td>
+        <td class="ok"></td>
         <td class="no"></td>
-        <td>Some readouts available</td>
+        <td>A Resources HUD gauge lists every resource on the controlled vehicle with percentage-full bars coloured per resource definition, auto-sizing up to six rows and scrolling beyond that.</td>
       </tr>
 
 
@@ -857,13 +857,13 @@
         <td>Multiple propellant types</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>A reactions library ships in Content: Hydrolox, Kerolox, Methalox, Ethalox, MMH/NTO, monopropellant hydrazine, HTP, and solids (APCP, double-base); thermal reactions (CH4, H2, NH3, etc.) are defined for future thermal rockets. Mixture ratios are no longer hardcoded.</td>
+        <td>A reactions library ships in Content: Hydrolox, Kerolox, Methalox, Ethalox, MMH/NTO, monopropellant hydrazine, HTP, and solids (APCP, double-base); thermal reactions (CH4, H2, NH3, etc.) are defined for future thermal rockets.</td>
       </tr>
       <tr>
         <td>Fuel crossfeed</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Propellant drains by part-tree graph with stage-aware ordering, plus player-defined one- or two-way fuel lines across decouplers and unconnected parts. Dedicated fuel-port parts now exist (placeholder art), with asparagus-aware drain ordering and a per-tank propellant-use toggle that can wall a tank off from engines and crossfeed.</td>
+        <td>Propellant drains by part-tree graph with stage-aware ordering, plus player-defined one- or two-way fuel lines across decouplers and unconnected parts. Dedicated fuel-port parts exist (placeholder art), with asparagus-aware drain ordering and a per-tank propellant-use toggle that can wall a tank off from engines and crossfeed. Fuel line hoses can be bent in the editor by adding or removing nodes along the line.</td>
       </tr>
       <tr>
         <td>Resource transfer</td>
@@ -1365,7 +1365,7 @@
         <td>Engine plume visuals</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Implemented but WIP. Volumetric plume trails are now enabled by default on solid rocket motors, with plume drift, dynamic segment merging and a distance-based LOD system.</td>
+        <td>Implemented but WIP. Volumetric plume trails are enabled by default on solid rocket motors, with plume drift, dynamic segment merging and a distance-based LOD system.</td>
       </tr>
       <tr>
         <td>Reentry effects</td>
@@ -1383,7 +1383,7 @@
         <td>First person EVA</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>Regular EVA is possible, including walking, running and jumping on planet surfaces. No first person.</td>
+        <td>Regular EVA is possible, including walking, running and jumping on planet surfaces, and climbing ladders or grabbing a capsule hull to board. No first person.</td>
       </tr>
       <tr>
         <td>Camera effects (shaking, etc...)</td>
@@ -1395,7 +1395,7 @@
         <td>Surface details (rocks, trees, craters,etc...)</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Ground clutter (rocks, trees and vegetation by ecotype) and procedural craters, dunes and erosion, with a quality toggle.</td>
+        <td>Ground clutter (rocks, trees and vegetation by ecotype) and procedural craters, dunes and erosion, with a quality toggle. Rocks carry convex hull colliders and trees have colliders, so ground clutter is solid.</td>
       </tr>
       <tr>
         <td>Dynamic and immersive music</td>
@@ -1616,7 +1616,7 @@
         <td>Configurable UI (drag, hide, scale, etc...)</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>HUD gauges can be repositioned and resized, and any arrangement saved as a named HUD layout. A management window assigns per-layout hotkeys and a default, and layouts can be switched in flight via hotkeys.</td>
+        <td>HUD gauges can be repositioned and resized, and any arrangement saved as a named HUD layout. A management window assigns per-layout hotkeys and a default, and layouts can be switched in flight via hotkeys. Each gauge canvas can also carry context flags (Burn, Engines, EVA, Target, Vehicle, Sequence and more) so it only draws when they all apply to the controlled vehicle, editable in a Context Assignments window.</td>
       </tr>
       <tr>
         <td>Accessibility options</td>
