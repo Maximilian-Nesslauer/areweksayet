@@ -33,7 +33,7 @@
     Progress tracking and status indicators are a community interpretation, not official statements.
   </div>
   <div class="sub-disclaimer warning-box">
-    Last update: 11th August 2026
+    Last update: 26th August 2026
   </div>
   <hr>
   <h2>KSA ecosystem features</h2>
@@ -86,7 +86,7 @@
         <td>Physics simulation</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>6-DOF rigid-body physics with collisions, basic drag, buoyancy and thrust. Vehicles can be destroyed by impacts or by exceeding structural g and dynamic pressure limits. No soft-body or aero-lift yet.</td>
+        <td>6-DOF rigid-body physics with collisions, basic drag, buoyancy and thrust. Vehicles can be destroyed by impacts or by exceeding structural g and dynamic pressure limits. Ground clutter can be collided with and destroyed. No soft-body or aero-lift yet.</td>
       </tr>
       <tr>
         <td>Aerodynamics and atmospheres</td>
@@ -98,7 +98,7 @@
         <td>Kittens!</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Cute! Each save has a persistent kitten roster with crew assignment in the editor and launch menu, seat-level boarding and EVA, per-kitten mission stats and a memorial list. Kittens walk, run, jump and tumble on planet surfaces, and can grab onto ladders and capsule hulls to climb and board. A crew portrait panel shows a live camera for each occupied seat.</td>
+        <td>Cute! Each save has a persistent kitten roster with crew assignment in the editor and launch menu, seat-level boarding and EVA, per-kitten mission stats and a memorial list. Kittens walk, run, jump and tumble on planet surfaces, swim when they are buoyant, and can grab onto ladders and capsule hulls to climb and board. A crew portrait panel shows a live camera for each occupied seat, with a per-kitten field of view and a head, neck or chest camera target.</td>
       </tr>
       <tr>
         <td>Rocket construction</td>
@@ -126,7 +126,7 @@
         <td>Space center and launch complex</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>Placeholder launch pad structures exist at five launch sites (Cape Canaveral LC-39A, Vandenberg LC-4, Starbase OLM A, Guiana Space Centre ELA-4 and Mahia LC-1A), with collision and a vegetation exclusion zone. No buildings or facilities yet.</td>
+        <td>A modelled launch pad (pad deck, grates, crawler ramp and footpaths) stands at five launch sites (Cape Canaveral LC-39A, Vandenberg LC-4, Starbase OLM A, Guiana Space Centre ELA-4 and Mahia LC-1A), with collision, a vegetation exclusion zone and a terrain decal that flattens the ground around it. All five sites reuse the same pad model. No buildings or other facilities yet.</td>
       </tr>
       <tr>
         <td>Tech tree and science collection</td>
@@ -277,9 +277,9 @@
       </tr>
       <tr>
         <td>Parachutes</td>
+        <td class="maybe"></td>
         <td class="no"></td>
-        <td class="no"></td>
-        <td>No info yet.</td>
+        <td>A parachute bay part ships with an animated door, but no parachute itself: no canopy, deployment or drag model yet.</td>
       </tr>
       <tr>
         <td>Landing gear and steering</td>
@@ -478,9 +478,9 @@
       </tr>
       <tr>
         <td>Launch escape system</td>
+        <td class="ok"></td>
         <td class="no"></td>
-        <td class="no"></td>
-        <td>No info yet.</td>
+        <td>A launch escape tower ships for the Gemini nose: a solid motor with three canted nozzles, plus its own nosecone and skirt decouplers. It is staged like any other motor, and there is no dedicated abort action yet.</td>
       </tr>
       <tr>
         <td>Flags</td>
@@ -586,9 +586,9 @@
       </tr>
       <tr>
         <td>Parachutes</td>
+        <td class="maybe"></td>
         <td class="no"></td>
-        <td class="no"></td>
-        <td>No info yet.</td>
+        <td>A parachute bay part ships with an animated door, but no parachute itself: no canopy, deployment or drag model yet.</td>
       </tr>
       <tr>
         <td>Solar panels</td>
@@ -1285,9 +1285,9 @@
       </tr>
       <tr>
         <td>Launch complexes textures (Cape Canaveral, etc...)</td>
+        <td class="maybe"></td>
         <td class="no"></td>
-        <td class="no"></td>
-        <td>No info yet.</td>
+        <td>The shipping launch pad carries its own texture atlas with an alpha-mapped gravel trim, and blends into the terrain around it. One generic pad is reused at all five launch sites, so there are no site-specific complexes yet.</td>
       </tr>
 
     </tbody>
@@ -1377,13 +1377,13 @@
         <td>IVA cockpits</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>IVA camera with cockpit interiors; IVA raytracing available (toggle in graphics settings, off by default).</td>
+        <td>IVA camera with cockpit interiors; IVA raytracing available (toggle in graphics settings, off by default). Kittens in IVA receive raytraced lighting and reflections.</td>
       </tr>
       <tr>
         <td>First person EVA</td>
         <td class="maybe"></td>
         <td class="no"></td>
-        <td>Regular EVA is possible, including walking, running and jumping on planet surfaces, and climbing ladders or grabbing a capsule hull to board. No first person.</td>
+        <td>Regular EVA is possible, including walking, running and jumping on planet surfaces, swimming when buoyant, and climbing ladders or grabbing a capsule hull to board. No first person.</td>
       </tr>
       <tr>
         <td>Camera effects (shaking, etc...)</td>
@@ -1395,7 +1395,7 @@
         <td>Surface details (rocks, trees, craters,etc...)</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Ground clutter (rocks, trees and vegetation by ecotype) and procedural craters, dunes and erosion, with a quality toggle. Rocks carry convex hull colliders and trees have colliders, so ground clutter is solid.</td>
+        <td>Ground clutter (rocks, trees and vegetation by ecotype) and procedural craters, dunes and erosion, with a quality toggle. Clutter colliders reach the physics simulation and a hard enough impact destroys the clutter it strikes.</td>
       </tr>
       <tr>
         <td>Dynamic and immersive music</td>
@@ -1610,7 +1610,7 @@
         <td>UI scaling and DPI settings</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Font size, density, pixel snap and custom font configurable in Interface settings.</td>
+        <td>Interface Scale (50-200%) sizes windows, widgets and tooltips, and a separate HUD Scale (25-200%) sizes every HUD element on top of any per-gauge scaling. Density, pixel snap and a custom font are also configurable in Interface settings.</td>
       </tr>
       <tr>
         <td>Configurable UI (drag, hide, scale, etc...)</td>
