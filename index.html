@@ -33,7 +33,7 @@
     Progress tracking and status indicators are a community interpretation, not official statements.
   </div>
   <div class="sub-disclaimer warning-box">
-    Last update: 3rd October 2026
+    Last update: 13th October 2026
   </div>
   <hr>
   <h2>KSA ecosystem features</h2>
@@ -171,7 +171,7 @@
         <td>Maneuvering nodes</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Functional. Burns are created by left-click or a right-click menu with apsis and node snapping, warp-to-point, and circularize / match-target-plane presets; chained burns plan on the final post-burn trajectory. Auto-execution handles one burn at a time.
+        <td>Functional. Burns are created by left-click or a right-click menu with apsis and node snapping, warp-to-point, and circularize / match-target-plane presets; chained burns plan on the final post-burn trajectory. Auto-execution handles one burn at a time. Burns are predicted as finite burns: the flight plan draws the burn path from ignition to cutoff with Ignition, Staging and Cutoff markers, continues a burn across stages and SOI boundaries, and the flight computer lights the burn where the plan shows it.
         </td>
       </tr>
       <tr>
@@ -579,7 +579,7 @@
         <td>Gimbal</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Functional gimbal on all shipping liquid engines, driven by the FlightComputer.</td>
+        <td>Functional gimbal on all shipping liquid engines, driven by the FlightComputer. The flight computer trims the engines so that thrust passes through the center of mass, and steers along the net thrust axis during burns.</td>
       </tr>
       <tr>
         <td>Wheels</td>
@@ -718,7 +718,7 @@
         <td>Navball</td>
         <td class="ok"></td>
         <td class="maybe"></td>
-        <td>Shader-based, monochrome navball with multiple modes. Some modders working on custom navballs
+        <td>Shader-based, monochrome navball with multiple modes. The crosshair follows the control axis, and a bowl and dot follow the thrust axis, so off-center thrust is visible. Some modders working on custom navballs
           <a href="https://forums.ahwoo.com/threads/colorful-navball-sky-is-pale-blue-ground-is-pale-brown-v1-0.313/"
             target="_blank">
             (ap0r) Colorful Navball
@@ -1378,7 +1378,7 @@
         <td>Engine plume visuals</td>
         <td class="ok"></td>
         <td class="no"></td>
-        <td>Implemented but WIP. Volumetric plume trails are enabled by default on solid rocket motors, with plume drift, dynamic segment merging and a distance-based LOD system. Nearby volumetric exhausts merge into one combined plume, and exhausts blend correctly with clouds, plume trails and explosions.</td>
+        <td>Implemented but WIP. Volumetric plume trails are enabled by default on solid rocket motors, with plume drift, dynamic segment merging and a distance-based LOD system. Nearby volumetric exhausts merge into one combined plume, and exhausts blend correctly with clouds, plume trails and explosions. Plume trails cast long-distance shadows onto clouds, terrain and the atmosphere (can be turned off in the graphics settings).</td>
       </tr>
       <tr>
         <td>Reentry effects</td>
@@ -1742,7 +1742,7 @@
         <td>Multiple star systems</td>
         <td class="ok"></td>
         <td class="maybe"></td>
-        <td>The SolSystemInterstellar and EarthOnlyInterstellar systems add Alpha Centauri, Barnard's Star and Tau Ceti with their known planets. Lighting and solar panels follow the nearest star. Custom star systems are possible via configuration files. Some modders working on this.
+        <td>The SolSystemInterstellar and EarthOnlyInterstellar systems add Alpha Centauri, Barnard's Star and Tau Ceti with their known planets. Lighting and solar panels follow the nearest star. The Interstellar (Dense) system loads the catalogue stars within Tau Ceti's distance, including Sirius, Procyon, Epsilon Eridani and 61 Cygni with placeholder planets, and sky stars shift with parallax when you travel between stars. Custom star systems are possible via configuration files. Some modders working on this.
           <a href="https://forums.ahwoo.com/threads/alternate-reality-moonar-system-13-additional-moons-mynimas-saphina-kin-verbul-icar-strobok-insulus-rie-aphere-hex-resin-and-more.377/"
             target="_blank">
             (Thoteus) CustomMoonarSystem
